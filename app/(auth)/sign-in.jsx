@@ -20,7 +20,7 @@ const SignIn = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
-      <ScrollView>
+      <ScrollView contentContainerStyle={{ flexGrow: 1}}>
         <View className="w-full justify-center min-h-[85vh] px-4 my-6">
           <Text className="text-2xl text-white text-semibold mt-10 
           font-psemibold">Welcome back</Text>
@@ -39,7 +39,7 @@ const SignIn = () => {
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
           />
-
+          
           <CustomButton 
             title="Sign In"
             handlePress={submit}
@@ -47,12 +47,12 @@ const SignIn = () => {
             isLoading={isSubmitting}
           /> 
           
-          <View className="justify-canter pt-5 flex-row gap-2">
+          <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-gray-100 font-pregular">
               Don't have an account?
             </Text>
             <Link href="/sign-up" className="text-lg font-psemibold 
-            text-secondary">Sign Up</Link>
+            text-secondary">Sign Up!</Link>
           </View>
         </View>
       </ScrollView>

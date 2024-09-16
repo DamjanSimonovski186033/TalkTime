@@ -21,7 +21,7 @@ const SignUp = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
-      <ScrollView>
+      <ScrollView contentContainerStyle={{ flexGrow: 1}}>
         <View className="w-full justify-center min-h-[85vh] px-4 my-6">
           <Text className="text-2xl text-white text-semibold mt-10 
           font-psemibold">Create an account</Text>
@@ -49,18 +49,18 @@ const SignUp = () => {
           />
 
           <CustomButton 
-            title="Sign In"
+            title="Sign Up"
             handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}
           /> 
           
-          <View className="justify-canter pt-5 flex-row gap-2">
+          <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-gray-100 font-pregular">
               Have an account already?
             </Text>
             <Link href="/sign-in" className="text-lg font-psemibold 
-            text-secondary">Sign In</Link>
+            text-secondary">Sign In!</Link>
           </View>
         </View>
       </ScrollView>
