@@ -20,6 +20,12 @@ module.exports = {
         },
       },
       fontFamily: {
+        cblack: ["Cairo-Black", "sans-serif"],
+        cbold: ["Cairo-Bold", "sans-serif"],
+        cextralight: ["Cairo-ExtraLight", "sans-serif"],
+        clight: ["Cairo-Light", "sans-serif"],
+        cregular: ["Cairo-Regular", "sans-serif"],
+        csemibold: ["Cairo-SemiBold", "sans-serif"],
         pthin: ["Poppins-Thin", "sans-serif"],
         pextralight: ["Poppins-ExtraLight", "sans-serif"],
         plight: ["Poppins-Light", "sans-serif"],

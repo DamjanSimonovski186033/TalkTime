@@ -1,13 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
-import { Link } from 'expo-router';
+import { Text, View, Image, ScrollView } from 'react-native';
+import { Link, Redirect, router } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import CustomButton from '../components/CustomButton';
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-3xl font-pblack">se:sh</Text>
-      <StatusBar style="auto" />
-      <Link href="/home" style={{color: 'blue'}}>Go to Home</Link>
-    </View>
+    <SafeAreaView className="bg-[#131217] h-full">
+      <ScrollView contentContainerStyle={{ height: '100%'}}>
+        <View className="w-full justify-evenly items-center min-h-[85vh] px-4">
+          <Image
+            source={require('../assets/images/sesh.png')}
+            className="w-[260px] h-[168px] justify-start position-absolute top-[-40]"
+            resizeMode='contain'
+          />
+          <Image
+            source={require('../assets/images/lines.png')}
+            className="justify-start position-absolute top-[-120]"
+            resizeMode='contain'
+          />
+          <CustomButton 
+          title="Sign In" 
+          handlePress={() => router.push('sign-in')}
+          containereStyles="w-full mt-7"></CustomButton>
+          <Text className='text-[#FDFCED] text-lg'>
+            Don't have an account? <Link href='/sign-up' className='text-[#F96E46]'>Sign up!</Link>
+          </Text>
+        </View>
+      </ScrollView>
+      <StatusBar backgroundColor='#131217' style='light'>
+      </StatusBar>
+    </SafeAreaView>
   );
 }

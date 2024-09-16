@@ -12,8 +12,8 @@ const TabIcon = ({ icon, color, name, focused }) => {
                 tintColor={color}
                 className="w-6 h-6"
             />
-            <Text className={`${focused ? 'font-psemibold' : 
-                'font-pregular'} text-xs`} style={{ color: color}}>
+            <Text className={`${focused ? 'font-csemibold' : 
+                'font-cregular'} text-xs`} style={{ color: color}}>
                 {name}
             </Text>
         </View>
@@ -26,10 +26,10 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
             tabBarShowLabel: false,
-            tabBarActiveTintColor: '#FFA001',
-            tabBarInactiveTintColor: '#CDCDE0',
+            tabBarActiveTintColor: '#FDFCED',
+            tabBarInactiveTintColor: '#99988F',
             tabBarStyle: {
-                backgroundColor: '#161622',//change colors
+                backgroundColor: '#131217',
                 borderTopWidth: 1,
                 borderTopColor: '#232533',
                 height: 84,
@@ -39,13 +39,13 @@ const TabsLayout = () => {
         <Tabs.Screen
             name="home"
             options={{
-                title: 'Home', 
+                title: 'Sesh', 
                 headerShown: false,
                 tabBarIcon: ({ color, focused}) => (
                     <TabIcon
-                        icon={icons.home}
+                        icon={icons.sesh}
                         color={color}
-                        name="Home"
+                        name="Sesh"
                         focused={focused}
                     />
                 ) 
@@ -58,7 +58,7 @@ const TabsLayout = () => {
                 headerShown: false,
                 tabBarIcon: ({ color, focused}) => (
                     <TabIcon
-                        icon={icons.home} //add and change icon
+                        icon={icons.stats} //add and change icon
                         color={color}
                         name="Stats"
                         focused={focused}
