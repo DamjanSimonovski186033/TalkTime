@@ -1,5 +1,5 @@
 import { View, Text, Image } from 'react-native'
-import { Tabs, Redirect } from 'expo-router'
+import { Tabs } from 'expo-router'
 
 import { icons } from '../../constants'
 
@@ -58,7 +58,7 @@ const TabsLayout = () => {
                 headerShown: false,
                 tabBarIcon: ({ color, focused}) => (
                     <TabIcon
-                        icon={icons.stats} //add and change icon
+                        icon={icons.stats}
                         color={color}
                         name="Stats"
                         focused={focused}
