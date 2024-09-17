@@ -19,15 +19,19 @@ export default function App() {
             className="w-[260px] h-[168px] justify-start position-absolute top-[-40]"
             resizeMode='contain'
           />
+
           <Image
             source={require('../assets/images/lines.png')}
             className="justify-start position-absolute top-[-120]"
             resizeMode='contain'
           />
+
           <CustomButton 
-          title="Sign In" 
-          handlePress={() => router.push('sign-in')}
-          containereStyles="w-full mt-7"></CustomButton>
+            title="Sign In" 
+            handlePress={() => router.push('sign-in')}
+            containerStyles="w-full mt-7"
+          />
+
           <Text className='text-[#FDFCED] text-lg'>
             Don't have an account? <Link href='/sign-up' className='text-[#F96E46]'>Sign up!</Link>
           </Text>
@@ -36,5 +40,5 @@ export default function App() {
       <StatusBar backgroundColor='#131217' style='light'>
       </StatusBar>
     </SafeAreaView>
-  );
+  )
 }
