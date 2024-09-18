@@ -1,7 +1,7 @@
 import { TouchableOpacity, Text } from 'react-native'
 import React from 'react'
 
-const CustomButton = ({ 
+const BtnWhite = ({ 
   title, 
   handlePress, 
   containerStyles, 
@@ -12,13 +12,14 @@ const CustomButton = ({
     <TouchableOpacity 
         onPress={handlePress}
         activeOpacity={0.7}
-        className={`bg-[#262A56] rounded-2xl min-h-[62px] w-[100%] justify-center items-center ${containerStyles} ${isLoading ? "opacity-50" : ""}`}
+        className={`bg-[#FDFCED] rounded-xl h-12 w-full justify-center items-center ${containerStyles} ${isLoading ? "opacity-50" : ""}`}
+        style={{ borderWidth: '2%', borderColor: '#FDFCED' }}
         disabled={isLoading}>
-        <Text className={`text-[#F2E3DB] font-psemibold text-lg ${textStyles}`}>
+        <Text className={`text-[#131217] font-cbold text-lg ${textStyles}`}>
             {title}
         </Text>
     </TouchableOpacity>
   )
 }
 
-export default CustomButton
+export default BtnWhite

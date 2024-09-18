@@ -14,7 +14,7 @@ const Profile = () => {
       await signOut()
       setUser(null)
       setIsLoggedIn(false)
-      router.replace("/sign-in")
+      router.replace("/")
     } catch (error) {
       console.log("Logout error:", error)
     }
