@@ -1,11 +1,12 @@
-import { View, Text, ScrollView, Alert } from 'react-native'
+import { View, Text, ScrollView, Alert, Image } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FormField from '../../components/FormField'
 import { useState } from 'react'
-import BtnWhite from '../../components/BtnWhite'
 import { Link, router } from 'expo-router'
 import { signIn } from '../../lib/appwrite'
+import BtnBlack from '../../components/BtnBlack'
+import { images } from '../../constants'
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -35,69 +36,56 @@ const SignIn = () => {
   }
 
   return (
-    <SafeAreaView className="bg-[#131217] h-full w-full justify-center items-center">
-      <View className="w-[92%] h-[94%] items-center" style={{ justifyContent: 'space-between' }}>
-        <View className="w-full h-[12%%] items-center" style={{ justifyContent: 'space-between' }}>
-          <View className="w-full h-[33%%] items-center">
-            <Text className="text-[#FDFCED] font-zdots text-3xl" style={{ position: 'absolute' }}>
-              log:in
+    <SafeAreaView className="bg-[#C7E2E7] h-full w-full">
+      <ScrollView>
+        <View className="w-full items-center h-[85vh] px-4 my-6" style={{ justifyContent: 'space-between' }}>
+          <View className="w-full h-[20%] justify-center items-center">
+            <Image source={images.logo}
+              resizeMode='contain'
+              className='w-[190px] h-[130px]' />
+          </View>
+          <View className="align-left w-[100%]">
+            <Text className="text-4xl text-semibold text-[#23474E] mt-10 font-tone w-[50%]">
+              welcome back
             </Text>
           </View>
-          <View className="w-full h-[52%%] items-center" style={{ justifyContent: 'space-between' }}>
-            <View
-              className={`bg-[#F96E46] rounded-2xl h-[12%] w-full`}
-              style={{ shadowColor: '#F96E46', shadowOpacity: 1, shadowRadius: "2%", shadowOffset: { width: 0, height: 0 } }}
-            ></View>
-            <View
-              className={`bg-[#AD4D31] rounded-2xl h-[12%] w-full`}
-              style={{ shadowColor: '#AD4D31', shadowOpacity: 1, shadowRadius: "2%", shadowOffset: { width: 0, height: 0 } }}
-            ></View>
-            <View
-              className={`bg-[#3A0CA3] rounded-2xl h-[12%] w-full`}
-              style={{ shadowColor: '#3A0CA3', shadowOpacity: 1, shadowRadius: "2%", shadowOffset: { width: 0, height: 0 } }}
-            ></View>
-            <View
-              className={`bg-[#1E0654] rounded-2xl h-[12%] w-full`}
-              style={{ shadowColor: '#1E0654', shadowOpacity: 1, shadowRadius: "2%", shadowOffset: { width: 0, height: 0 } }}
-            ></View>
-          </View>
-        </View>
-        <View className="w-full h-[26%%]" style={{ justifyContent: 'space-between' }}>
-          <View className="w-full h-[45%%]">
+          <View className="w-full h-[40%] justify-start items-center pt-10">
             <FormField
-              title="Email"
+              title='Email'
               value={form.email}
-              handleChangeText={(e) => setForm({ ...form, email: e })}
+              handleChangeText={(e) => setForm({
+                ...form,
+                email: e
+              })}
+              otherStyles=''
               keyboardType="email-address"
             />
-          </View>
-          <View className="w-full h-[45%%]">
             <FormField
-              title="Password"
+              title='Password'
               value={form.password}
-              handleChangeText={(e) => setForm({ ...form, password: e })}
+              handleChangeText={(e) => setForm({
+                ...form,
+                password: e
+              })}
+              otherStyles=''
             />
           </View>
-          <View className="w-full h-[45%%]">
-          </View>
-        </View>
-        <View className="w-full h-[54%%] justify-end" style={{marginBottom: 28}}>
-          <BtnWhite
-            title="Sign In"
-            height='12px'
-            handlePress={submit}
-            containerStyles="mt-7"
-            isLoading={isSubmitting}
-          />
-          <View className="justify-center pt-5 flex-row gap-2">
-            <Text className="text-m text-[#FDFCED] font-cmed">
+          <View className="w-full h-[40%] justify-center items-center pb-9">
+            <BtnBlack
+              title="Sign In"
+              handlePress={submit}
+              containerStyles="bg-[#71DB88]"
+              isLoading={isSubmitting} />
+
+            <Text className="text-l text-semibold text-[#23474E] font-tone pt-2">
               Don't have an account?
+              <Link href="/sign-up" className="text-l text-semibold text-[#A54E6D] font-tone">
+                Sign Up
+              </Link>
             </Text>
-            <Link href="/sign-up" className="text-m font-cbold 
-            text-[#FDFCED]">Sign Up!</Link>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }

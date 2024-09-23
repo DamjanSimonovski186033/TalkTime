@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "se:sh",
-    "slug": "sesh",
-    "scheme": "sesh",
+    "name": "TalkTime",
+    "slug": "talktime",
+    "scheme": "talktime",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "dark",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

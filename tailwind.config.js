@@ -20,6 +20,7 @@ module.exports = {
         },
       },
       fontFamily: {
+        tone: ["TitanOne-Regular", "sans-serif"],
         zdots: ["ZenDots-Regular", "sans-serif"],
         cblack: ["Cairo-Black", "sans-serif"],
         cbold: ["Cairo-Bold", "sans-serif"],

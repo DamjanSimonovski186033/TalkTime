@@ -8,6 +8,7 @@ SplashScreen.preventAutoHideAsync();
 const RootLayout = () => {
 
   const [fontsLoaded, error] = useFonts({
+    "TitanOne-Regular": require("../assets/fonts/TitanOne-Regular.ttf"),
     "ZenDots-Regular": require("../assets/fonts/ZenDots-Regular.ttf"),
     "Cairo-Black": require("../assets/fonts/Cairo-Black.ttf"),
     "Cairo-Bold": require("../assets/fonts/Cairo-Bold.ttf"),
@@ -41,6 +42,7 @@ const RootLayout = () => {
         <Stack.Screen name="index" options={{ headerShown: false}} />
         <Stack.Screen name="(auth)" options={{ headerShown: false}} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false}} />
+        <Stack.Screen name="(games)" options={{ headerShown: false}} />
       </Stack>
     </GlobalProvider>
   )

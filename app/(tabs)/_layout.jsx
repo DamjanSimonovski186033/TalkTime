@@ -5,15 +5,17 @@ import { icons } from '../../constants'
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
-        <View className="items-center justify-center gap-1">
+        <View className="flex items-center justify-center ">
             <Image
                 source={icon}
-                resizeMode="contain"
+                resizeMode='contain'
                 tintColor={color}
                 className="w-6 h-6"
             />
-            <Text className={`${focused ? 'font-csbold' : 
-                'font-creg'} text-xs`} style={{ color: color}}>
+            <Text
+                className={`${focused ? "font-tone" : "font-tone"} text-xs`}
+                style={{ color: color }}
+            >
                 {name}
             </Text>
         </View>
@@ -21,69 +23,52 @@ const TabIcon = ({ icon, color, name, focused }) => {
 }
 
 const TabsLayout = () => {
-  return (
-    <>
-      <Tabs
-        screenOptions={{
-            tabBarShowLabel: false,
-            tabBarActiveTintColor: '#FDFCED',
-            tabBarInactiveTintColor: '#99988F',
-            tabBarStyle:{
-                backgroundColor: '#131217',
-                borderTopWidth: 1,
-                borderTopColor: '#131217',
-                height: 84,
-            }
-        }}
-      >
-        <Tabs.Screen
-            name="home"
-            options={{
-                title: 'Sesh', 
-                headerShown: false,
-                tabBarIcon: ({ color, focused}) => (
-                    <TabIcon
-                        icon={icons.sesh}
-                        color={color}
-                        name="Sesh"
-                        focused={focused}
-                    />
-                ) 
-            }}
-        />
-        <Tabs.Screen
-            name="stats"
-            options={{
-                title: 'Stats', 
-                headerShown: false,
-                tabBarIcon: ({ color, focused}) => (
-                    <TabIcon
-                        icon={icons.stats}
-                        color={color}
-                        name="Stats"
-                        focused={focused}
-                    />
-                ) 
-            }}
-        />
-        <Tabs.Screen
-            name="profile"
-            options={{
-                title: 'Profile', 
-                headerShown: false,
-                tabBarIcon: ({ color, focused}) => (
-                    <TabIcon
-                        icon={icons.profile}
-                        color={color}
-                        name="Profile"
-                        focused={focused}
-                    />
-                ) 
-            }}
-        />
-      </Tabs>
-    </>
-  )
+    return (
+        <>
+            <Tabs
+                screenOptions={{
+                    tabBarShowLabel: false,
+                    tabBarActiveTintColor: '#FFFFFF',
+                    tabBarInactiveTintColor: '#B1C9CE',
+                    tabBarStyle: {
+                        backgroundColor: '#73969D',
+                        height: 84,
+                    }
+
+                }}>
+                <Tabs.Screen
+                    name='home'
+                    options={{
+                        title: 'Home',
+                        headerShown: false,
+                        tabBarIcon: ({ color, focused }) => (
+                            <TabIcon
+                                icon={icons.home}
+                                color={color}
+                                name="Home"
+                                focused={focused}
+                            />
+                        )
+                    }}
+                />
+                <Tabs.Screen
+                    name='profile'
+                    options={{
+                        title: 'Profile',
+                        headerShown: false,
+                        tabBarIcon: ({ color, focused }) => (
+                            <TabIcon
+                                icon={icons.profile}
+                                color={color}
+                                name="Profile"
+                                focused={focused}
+                            />
+                        )
+                    }}
+                />
+            </Tabs>
+        </>
+    )
 }
 
 export default TabsLayout
