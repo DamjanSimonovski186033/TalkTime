@@ -18,7 +18,7 @@ const Home = () => {
         <View className="w-full h-[50vh] items-center" style={{ justifyContent: 'space-between' }}>
           <View className="w-full items-center justify-center">
             <GameBtn
-              title="Match the Cards"
+              title="Спој ги сликите"
               handlePress={() => {
                 router.push('../match');
               }}
@@ -28,7 +28,7 @@ const Home = () => {
           </View>
           <View className="w-full items-center justify-center">
             <GameBtn
-              title="Count the Cards"
+              title="Изброј ги сликите"
               handlePress={() => {
                 router.push('../count');
               }}
@@ -38,7 +38,7 @@ const Home = () => {
           </View>
           <View className="w-full items-center justify-center">
             <GameBtn
-              title="What does the card say"
+              title="Што има на сликата"
               handlePress={() => {
                 router.push('../say');
               }}

@@ -38,7 +38,7 @@ const Match = () => {
     const [cards, setCards] = useState([]);
     const [flippedCards, setFlippedCards] = useState([]);
     const [gameCompleted, setGameCompleted] = useState(false);
-    const numColumns = 3; // Set the number of columns
+    const numColumns = 3;
 
     useEffect(() => {
         initializeGame();
@@ -140,15 +140,15 @@ const Match = () => {
         <View className='h-[85vh] justify-center items-center' style={[styles.container, gameCompleted && styles.completedContainer]}>
             {gameCompleted && (
                 <View style={styles.completedOverlay}>
-                    <Text style={styles.completedText} className='font-tone'>Great Job!</Text>
+                    <Text style={styles.completedText} className='font-tone'>Браво!</Text>
                     <TouchableOpacity style={styles.playAgainButton} onPress={initializeGame}>
-                        <Text style={styles.playAgainText} className='font-tone'>Play Again</Text>
+                        <Text style={styles.playAgainText} className='font-tone'>Играј Повторно</Text>
                     </TouchableOpacity>
                 </View>
             )}
 
             {!gameCompleted && (
-                <Text style={styles.title} className='font-tone'>Match the Cards</Text>
+                <Text style={styles.title} className='font-tone'>Спојте ги сликите</Text>
             )}
 
             <View className='h-[70%] justify-center items-center'>

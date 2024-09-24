@@ -10,25 +10,25 @@ import {
 } from 'react-native';
 
 const cardImages = [
-    { id: 1, image: require('../../assets/cards/Bear.png'), name: 'Bears' },
-    { id: 2, image: require('../../assets/cards/Cat.png'), name: 'Cats' },
-    { id: 3, image: require('../../assets/cards/Chicken.png'), name: 'Chickens' },
-    { id: 4, image: require('../../assets/cards/Cow.png'), name: 'Cows' },
-    { id: 5, image: require('../../assets/cards/Crocodile.png'), name: 'Crocodiles' },
-    { id: 6, image: require('../../assets/cards/Dog.png'), name: 'Dogs' },
-    { id: 7, image: require('../../assets/cards/Elephant.png'), name: 'Elephants' },
-    { id: 8, image: require('../../assets/cards/Fox.png'), name: 'Foxes' },
-    { id: 9, image: require('../../assets/cards/Giraffe.png'), name: 'Giraffes' },
-    { id: 10, image: require('../../assets/cards/Horse.png'), name: 'Horses' },
-    { id: 11, image: require('../../assets/cards/Koala.png'), name: 'Koalas' },
-    { id: 12, image: require('../../assets/cards/Lion.png'), name: 'Lions' },
-    { id: 13, image: require('../../assets/cards/Monkey.png'), name: 'Monkeys' },
-    { id: 14, image: require('../../assets/cards/Mouse.png'), name: 'Mice' },
-    { id: 15, image: require('../../assets/cards/Penguin.png'), name: 'Penguins' },
-    { id: 16, image: require('../../assets/cards/Pig.png'), name: 'Pigs' },
-    { id: 17, image: require('../../assets/cards/Sheep.png'), name: 'Sheep' },
-    { id: 18, image: require('../../assets/cards/Tiger.png'), name: 'Tigers' },
-    { id: 19, image: require('../../assets/cards/Zebra.png'), name: 'Zebras' },
+    { id: 1, image: require('../../assets/cards/Bear.png'), name: 'Мечките' },
+    { id: 2, image: require('../../assets/cards/Cat.png'), name: 'Мачките' },
+    { id: 3, image: require('../../assets/cards/Chicken.png'), name: 'Кокошките' },
+    { id: 4, image: require('../../assets/cards/Cow.png'), name: 'Кравите' },
+    { id: 5, image: require('../../assets/cards/Crocodile.png'), name: 'Крокодилите' },
+    { id: 6, image: require('../../assets/cards/Dog.png'), name: 'Кучињате' },
+    { id: 7, image: require('../../assets/cards/Elephant.png'), name: 'Слоновите' },
+    { id: 8, image: require('../../assets/cards/Fox.png'), name: 'Лисиците' },
+    { id: 9, image: require('../../assets/cards/Giraffe.png'), name: 'Жирафите' },
+    { id: 10, image: require('../../assets/cards/Horse.png'), name: 'Коњите' },
+    { id: 11, image: require('../../assets/cards/Koala.png'), name: 'Коалите' },
+    { id: 12, image: require('../../assets/cards/Lion.png'), name: 'Лавовите' },
+    { id: 13, image: require('../../assets/cards/Monkey.png'), name: 'Мајмуните' },
+    { id: 14, image: require('../../assets/cards/Mouse.png'), name: 'Глувците' },
+    { id: 15, image: require('../../assets/cards/Penguin.png'), name: 'Пингвините' },
+    { id: 16, image: require('../../assets/cards/Pig.png'), name: 'Прасињата' },
+    { id: 17, image: require('../../assets/cards/Sheep.png'), name: 'Овците' },
+    { id: 18, image: require('../../assets/cards/Tiger.png'), name: 'Тигрите' },
+    { id: 19, image: require('../../assets/cards/Zebra.png'), name: 'Зебрите' },
 ];
 
 const CountTheCardsGame = () => {
@@ -76,7 +76,7 @@ const CountTheCardsGame = () => {
         <View style={styles.container}>
             {!gameCompleted ? (
                 <>
-                    <Text className='font-tone' style={styles.header}>Count the {targetCard}</Text>
+                    <Text className='font-tone' style={styles.header}>Изброј ги {targetCard}</Text>
                     <View style={styles.grid}>
                         {cards.map((card, index) => (
                             <Image 
@@ -93,19 +93,19 @@ const CountTheCardsGame = () => {
                             keyboardType="numeric"
                             value={userInput}
                             onChangeText={handleInputChange}
-                            placeholder="Enter the count"
+                            placeholder="Внесете број"
                             placeholderTextColor="#FFFFFF"
                         />
                     </View>
                 </>
             ) : (
                 <View style={styles.completedOverlay}>
-                    <Text style={styles.completedText}>Great Job!</Text>
+                    <Text style={styles.completedText}>Браво!</Text>
                     <TouchableOpacity 
                         style={styles.playAgainButton} 
                         onPress={initializeGame}
                     >
-                        <Text style={styles.playAgainText}>Play Again</Text>
+                        <Text style={styles.playAgainText}>Играј Повторно</Text>
                     </TouchableOpacity>
                 </View>
             )}
